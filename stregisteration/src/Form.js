@@ -27,7 +27,8 @@ class Form extends React.Component{
     }
 
     handleSubmit(e) {
-        window.alert(this.state)
+        window.alert('this.state.username')
+        //window.alert(this.state)
     }
 
     validateField(fieldName, value) {
