@@ -80,9 +80,9 @@ class Form extends React.Component{
                     <h1 className="head">Go</h1>
                     <h1 className="head">Simpletax</h1>
                 </div>
-                <div>
+                <div className="container-left">
                     <h1 className="sidebar">Start your free trial</h1>
-                    <h1 className="sidebar one">- no credit card required!</h1>
+                    <h1 className="one">- no credit card required!</h1>
                     <p> ✔ Simple and easy to use </p>
                     <p>✔ Save time and hassle </p>
                     <p>✔ Save money</p>               
@@ -91,23 +91,23 @@ class Form extends React.Component{
                     <p>✔ Making Tax Digital ready </p>
                     <p>✔ No obligation, cancel at anytime!</p>
                 </div>
-                <div className="container">
+                <div className="container-right">
                     <p className="formheader">Start your free trial</p>
                     <form>
-                        <div>
+                        <div className="error">
                             <FormErrors formErrors={this.state.formErrors} />
                         </div>
                         <div>
-                            <input type="text" className="form-control" placeholder="First Name" name="username" value={this.state.username} required onChange={this.handleUserInput} size="50"/>
+                            <input type="text" className="form-control" placeholder="First Name" name="username" value={this.state.username} required onChange={this.handleUserInput} />
                         </div>
                         <div>
-                            <input type="text" className="form-control" placeholder="Surname" name="surname" value={this.state.surname} onChange={this.handleUserInput} size="50"/>
+                            <input type="text" className="form-control" placeholder="Surname" name="surname" value={this.state.surname} onChange={this.handleUserInput} />
                         </div>
                         <div>
-                            <input type="mail" className="form-control" placeholder="Email" name="email" value={this.state.email} onChange={this.handleUserInput} required size="50"/>
+                            <input type="mail" className="form-control" placeholder="Email" name="email" value={this.state.email} onChange={this.handleUserInput} required />
                         </div>
                         <div>
-                            <input type="password" className="form-control" placeholder="Create password" name="password" value={this.state.password} onChange={this.handleUserInput} required size="50"/>
+                            <input type="password" className="form-control" placeholder="Create password" name="password" value={this.state.password} onChange={this.handleUserInput} required />
                         </div>
                         <button type="submit" className="btn btn-primary" disabled={!this.state.formValid} onClick={this.handleSubmit}>Sign up</button>
                     </form>

@@ -17,31 +17,62 @@
 
 .sidebar {
     color: rgb(33, 140, 240);
+    font-size: 250%;
 }
 
 .one{
     color: rgb(243, 131, 228);
-}
-
-.formheader {
     font-size: 150%;
 }
 
-.container {
-    position: absolute;
-    width: 800px;
-    height: 500px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+.formheader {
+    font-size: 200%;
+}
+
+.container-right {
+    margin-top: 8%;
+    margin-bottom: 2%;
+    margin-right: 15%;
+    padding-left: 3%;
+    padding-right: 2%;
+    width: 40%;
+    height: 470px;
+    /*border: 1px solid rgba(0, 0, 0, 0.2);*/
+    box-shadow: 20px 20px 10px rgba(14, 13, 13, 0.1);
     border-radius: 10px;
-    padding: 10px;
+    /*padding: 10px;*/
     box-sizing: border-box;
-    top: 0px;
+    /*top: 0px;
     bottom: 0px;
     left: 0px;
-    right: 0px;
-    margin: auto;
-    background: rgb(228, 226, 228);
+    right: 0px;*/
+    /*margin: auto;*/
+    background: rgb(243, 241, 243);
+    float: right;
+}
+
+.container-left {
+    float: left;
+    top: 240px;
+    padding-left: 250px;
+    padding-top: 115px;
+}
+
+.form-control{
+    margin-bottom: 20px;
+    width: 100%;
+    height: 50px;
+}
+
+.btn {
+    font-size: 130%;
+    width: 35%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #8fe6ec;
+    color: white;
+    float: right;
+    margin-right: 2%;
 }
 
 .field-icon {
@@ -55,4 +86,8 @@
 .demoForm {
 	width: 500px;
 	margin: auto;
+}
+
+.error {
+    color:red;
 }
