@@ -17,6 +17,8 @@ class Form extends React.Component{
           passwordValid: false,
           formValid: false
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUserInput = this.handleUserInput.bind(this);
     }
 
     handleUserInput = (e) => {
@@ -26,11 +28,11 @@ class Form extends React.Component{
                       () => { this.validateField(name, value) });
     }
 
-    handleSubmit(e) {
-        window.alert('this.state.username')
-        //window.alert(this.state)
+    handleSubmit(event) {
+        //event.preventDefault();
+        console.log(this.state);
     }
-
+    
     validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors;
         let usernameValid = this.state.usernameValid;
@@ -52,8 +54,8 @@ class Form extends React.Component{
             fieldValidationErrors.email = emailValid ? '' : ' is invalid';
             break;
           case 'password':
-            passwordValid = value.length >= 6;
-            fieldValidationErrors.password = passwordValid ? '': ' is too short';
+            passwordValid = value.match("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+            fieldValidationErrors.password = passwordValid ? '': ' should contain atleast 8 characters including 1 lowercase, uppercase, number and special character';
             break;
           default:
             break;
@@ -64,15 +66,13 @@ class Form extends React.Component{
                         emailValid: emailValid,
                         passwordValid: passwordValid
                       }, this.validateForm);
+        //console.log(this.state);
     }
 
     validateForm() {
         this.setState({formValid: this.state.usernameValid && this.state.surnameValid && this.state.emailValid && this.state.passwordValid});
+        //console.log(this.state);
       }
-    
-    errorClass(error) {
-        return(error.length === 0 ? '' : 'has-error');
-    }
 
     render() {
         return (
@@ -110,7 +110,7 @@ class Form extends React.Component{
                         <div>
                             <input type="password" className="form-control" placeholder="Create password" name="password" value={this.state.password} onChange={this.handleUserInput} required />
                         </div>
-                        <button type="submit" className="btn btn-primary" disabled={!this.state.formValid} onClick={this.handleSubmit}>Sign up</button>
+                        <button type="submit" className="btn btn-primary" disabled={!this.state.formValid} onClick={this.handleSubmit}>Get Started</button>
                     </form>
                     
                 </div>
