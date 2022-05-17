@@ -1,0 +1,85 @@
+import React from "react";
+import { NavLink , Link} from "react-router-dom";
+import "./style.css"
+import profile from "./assests/profile.png";
+import cart from "./assests/cart.png";
+import logo from "./assests/y-logo.png";
+
+class Nav extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            isOpen : false
+        }
+        this.togglePopup = this.togglePopup.bind(this);
+    }
+
+    togglePopup = () => {
+        this.setState({isOpen:true})
+    }
+    handleClose = () => {
+        this.setState({isOpen:false})
+    }
+    render() {
+        const Popup = (props) => {
+            return (
+              <div className="popup-box">
+                <div className="box" align="right">
+                  <h1 className="popup-title">Who we are?</h1>
+                  <span className="close-icon" onClick={this.handleClose}>x</span>
+                  <hr></hr>
+                  {props.content}
+                </div>
+              </div>
+            );
+          };
+
+        return (
+            <nav>
+                <h2 className="logo-header"><img className="logo" src={logo} alt="" />
+                Yumito</h2>
+
+                <ul className="nav-link">
+                    <li>
+                        <NavLink to="/about" activeClassName="active" onClick={this.togglePopup} >About</NavLink>
+                    </li>
+                    {this.state.isOpen && <Popup
+                        content={<>
+                            <b className="popup">Design your Popup</b>
+                            <p className="popup">
+                                Our technology platform connects customers,
+                                restaurant partners and delivery partners, 
+                                serving their multiple needs. Customerrs use
+                                our platform to search and discover their
+                                favourite food items, read and write customer
+                                generated reviews, offers various deals on food 
+                                items, order food delivery and make payments
+                                while dining-out at restaurants. We provide 
+                                high quality food items delivered within a 
+                                short span of time.
+                            </p>
+                            <hr></hr>
+                            <Link to="/login" className="about-nav">Login</Link>
+                            <Link to="/register" className="about-nav">Sign Up</Link>
+                        </>}
+                        handleClose={this.togglePopup} 
+                    />}
+                    <li>
+                        <NavLink to="/login" activeClassName="active">Login</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/register" activeClassName="active">Signup</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/cart" activeClassName="active"><a href="" className="cart-icon"><img className='cart-icon' src={cart}/></a></NavLink>
+                    </li>
+                     <li>
+                        <NavLink to="/profile" activeClassName="active"><a href="" className="profile-icon"><img className='profile-icon' src={profile}/></a></NavLink>
+                    </li>
+                </ul>
+            </nav>
+        );
+    }
+}
+
+export default Nav;
