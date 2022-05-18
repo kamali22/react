@@ -70,12 +70,7 @@ class Nav extends React.Component {
                     <li>
                         <NavLink to="/register" activeClassName="active">Signup</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/cart" activeClassName="active"><a href="" className="cart-icon"><img className='cart-icon' src={cart}/></a></NavLink>
-                    </li>
-                     <li>
-                        <NavLink to="/profile" activeClassName="active"><a href="" className="profile-icon"><img className='profile-icon' src={profile}/></a></NavLink>
-                    </li>
+                    
                 </ul>
             </nav>
         );

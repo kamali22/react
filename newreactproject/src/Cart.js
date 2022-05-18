@@ -46,7 +46,7 @@ export default function Cart({ cart, setCart }) {
                                     Price: {product.price} <br></br>
                                     Vegan: {product.vegan}
                                 </Card.Text>
-                                <button onClick={() => removeFromCart(product)}>Remove item</button>
+                                <button onClick={() => removeFromCart(product, idx)}>Remove item</button>
                             </Card.Body>
                         </Card>
                     </Col>	

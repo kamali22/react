@@ -17,6 +17,7 @@ class Routing extends React.Component {
         <div className='App'>  
           <Nav/>
           <Routes>
+            <Route path="" element={<DemoData/>} />
             <Route path="/order" element={<DataLoad />} />
             <Route path="/home" element={<DemoData />} />
             <Route path="/about" element={<About />} />
