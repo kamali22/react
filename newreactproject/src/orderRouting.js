@@ -9,17 +9,20 @@ import DemoData from './DemoData'
 import DataLoad from './DataLoad'
 import DataNav from './DataNav'
 import CartOrder from './CartOrder'
+import Cart from './Cart'
+import FoodProduct from './FoodProduct'
+import AddCart from './AddCart'
 
 class OrderRouting extends React.Component {  
   
   render() {  
     return (  
       <Router>
-        <div className='App'>  
-          <DataNav/>
+        <div className='App'>
           <Routes>
-            <Route path="/cart" element={<CartOrder />} />
-            <Route path="/order" element={<DataLoad />} />
+            <Route path="/food" element={<FoodProduct />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/order" element={<AddCart />} />
             <Route path="/logout" element={<LoginForm />} />
           </Routes>
         </div>  
@@ -27,4 +30,5 @@ class OrderRouting extends React.Component {
     )  
   }  
 }  
+
 export default OrderRouting;

@@ -6,9 +6,11 @@ import Nav from './Nav';
 import stockData from "./foodData";
 import "./style.css";
 import { useState } from 'react';
-import CartOrder from './CartOrder';
 import Cart from './Cart';
 import FoodProduct from './FoodProduct';
+import profile from "./assests/profile.png";
+import * as cartimg from "./assests/cart.png";
+import logo from "./assests/y-logo.png";
 
 const PAGE_PRODUCTS = 'products';
 const PAGE_CART = 'cart';
@@ -25,9 +27,6 @@ function DataLoad(props) {
 	const getCartTotal = () => {
 		console.log("cart length")
 		return cart.length;
-		/*return cart.reduce(
-			(sum, {quantity}) => sum + quantity,0
-		);*/
 	};
 
 	const handleCart = (cname) => {
@@ -38,10 +37,8 @@ function DataLoad(props) {
 
 	return (
 		<div>
-			<header>
-				<button onClick={() => navigateTo(PAGE_CART)}>View Cart ({getCartTotal})</button>
-				<button onClick={() => navigateTo(PAGE_PRODUCTS)}>View Products</button>
-			</header>
+			<DataNav />
+			
 			{page === PAGE_PRODUCTS && (<FoodProduct cart={cart} setCart={setCart} /> )}
 			{page === PAGE_CART && (<Cart cart={cart} setCart={setCart} /> )}
 		</div>

@@ -1,96 +1,55 @@
-import React from 'react';
-import {Container ,Card, Col, Row } from 'react-bootstrap';  
+import React from "react";
+import { useCart } from "react-use-cart";
+import "./assests/Cart.css";
+import DataNav from "./DataNav";
 
-export default function Cart({ cart, setCart }) {
-  const getTotalSum = () => {
-    return cart.reduce(
-      (sum, { cost, quantity }) => sum + cost * quantity,
-      0
-    );
-  };
+const Cart = () => {
+  const { 
+    isEmpty,
+    totalUniqueItems,
+    items,
+    totalItems,
+    cartTotal,
+    updateItemQuantity,
+    removeItem,
+    emptyCart 
+  } = useCart();
 
-  const clearCart = () => {
-    setCart([]);
-  };
-
-  const setQuantity = (product, amount) => {
-    const newCart = [...cart];
-    newCart.find(
-      (item) => item.name === product.name
-    ).quantity = amount;
-    setCart(newCart);
-  };
-
-  const removeFromCart = (productToRemove) => {
-    setCart(
-      cart.filter((product) => product !== productToRemove)
-    );
-  };
+  if (isEmpty) return <h1><DataNav />Your cart is empty!</h1>
 
   return (
-    <>
-      <h1>Cart</h1>
-      {cart.length > 0 && (
-        <button onClick={clearCart}>Clear Cart</button>
-      )}
-      <div className="products">
-        {cart.map((product, idx) => (
-            <div>
-                <Container fluid className='container'>	
-                    <Col xs="4">
-                        <Card className='card'>
-                            <Card.Img variant='' src={product.img} />
-                            <Card.Body className='card'>
-                                <Card.Title>{product.itemName}</Card.Title>
-                                <Card.Text>
-                                    Price: {product.price} <br></br>
-                                    Vegan: {product.vegan}
-                                </Card.Text>
-                                <button onClick={() => removeFromCart(product, idx)}>Remove item</button>
-                            </Card.Body>
-                        </Card>
-                    </Col>	
-                </Container>
-            </div>
-        ))}
+    <div> <DataNav />
+      <h2 className="cart-header">In Your Cart ({totalUniqueItems})</h2>
+      <table className="table">
+        <tbody>
+          {items.map((item, index) => {
+            return (
+              <tr key={index}>
+                <td>
+                  <img src={item.img} style={{height: '6rem', width: '9rem'}} />
+                </td>
+                <td>{item.itemName}</td>
+                <td>${item.price}</td>
+                <td>Quantity ({item.quantity})</td>
+                <td>
+                  <button className="cartbutton" onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>-</button>
+                  <button className="cartbutton" onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>+</button>
+                  <button className="cartbutton remove" onClick={() => removeItem(item.id)}>Remove Item</button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      {console.warn(items)}
+      <div className="footerdiv">
+        <span className="span">
+          <h2 className="footer">Total Price: ${cartTotal}</h2>
+          <button className="footer remove cartbutton" onClick={() => emptyCart()}>Clear Cart</button>
+        </span>
       </div>
-
-      <div>Total Cost: ${getTotalSum()}</div>
-    </>
+    </div>
   );
 }
 
-/*
-return (
-    <>
-      <h1>Cart</h1>
-      {cart.length > 0 && (
-        <button onClick={clearCart}>Clear Cart</button>
-      )}
-      <div className="products">
-        {cart.map((product, idx) => (
-          <div className="product" key={idx}>
-            <h3>{product.name}</h3>
-            <h4>${product.cost}</h4>
-            <input
-              value={product.quantity}
-              onChange={(e) =>
-                setQuantity(
-                  product,
-                  parseInt(e.target.value)
-                )
-              }
-            />
-            <img src={product.image} alt={product.name} />
-            <button onClick={() => removeFromCart(product)}>
-              Remove
-            </button>
-          </div>
-        ))}
-      </div>
-
-      <div>Total Cost: ${getTotalSum()}</div>
-    </>
-  );
-
-*/
+export default Cart;

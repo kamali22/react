@@ -197,6 +197,14 @@ li {
   padding-left: 0px;
   text-align: left;
 }
+.container {
+  display: flex;
+  margin-bottom: 30px;
+}
+.logged:hover {
+  box-shadow: 2px 5px;
+  transform: scale(1.1);
+}
 .profile-icon {
   width: 40px;
   height: 40px;
@@ -207,9 +215,12 @@ li {
 }
 .container {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .bootstrap-card {
-  display: inline;
-  background-color: #00BFFF;
+  display: grid;
+}
+.logged:hover {
+  box-shadow: 2px 5px;
+  transform: scale(1.1);
 }

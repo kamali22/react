@@ -81,6 +81,48 @@
       "address": "Namakkal",
       "loggedIn": true,
       "id": 15
+    },
+    {
+      "email": "kamali@gmail.com",
+      "password": "asdf",
+      "address": "nkl",
+      "loggedIn": true,
+      "id": 16
+    },
+    {
+      "email": "keerthi",
+      "password": "qwerty",
+      "address": "nkl",
+      "loggedIn": true,
+      "id": 17
+    },
+    {
+      "email": "Shwetha",
+      "password": "qwerty",
+      "address": "Chennai",
+      "loggedIn": true,
+      "id": 18
+    },
+    {
+      "email": "shwetha@gmail.com",
+      "password": "qwerty",
+      "address": "Chennai",
+      "loggedIn": true,
+      "id": 19
+    },
+    {
+      "email": "Aruna",
+      "password": "aspire",
+      "address": "Namakkal",
+      "loggedIn": true,
+      "id": 20
+    },
+    {
+      "email": "ARuna@gmail.com",
+      "password": "aspire@123",
+      "address": "Namakkal",
+      "loggedIn": true,
+      "id": 21
     }
   ]
 }

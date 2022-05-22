@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link , Navigate, useNavigate} from "react-router-dom";
 import "./style.css"
+import Nav from './Nav';
 import axios from 'axios';
 
 export default function RegisterForm() {
@@ -21,12 +22,13 @@ export default function RegisterForm() {
 
   let navigate = useNavigate(); 
   const routeChange = () =>{ 
-    let path = `/home`; 
+    let path = `/order`; 
     navigate(path);
   }
   
   const handleDataSubmit = async (e) => {
     e.preventDefault();
+    console.log("inside handle submit");
     const { email, password, address , loggedIn} = values;
     const user = { email, password, address , loggedIn};
     await axios.post('http://localhost:3010/posts', user);
@@ -63,6 +65,7 @@ export default function RegisterForm() {
   
   return (
     <div className="form">
+        <Nav />
         <div className='border'>
             <div><h2 className='header'>Register Here</h2></div>
 
@@ -71,7 +74,7 @@ export default function RegisterForm() {
               {successMessage()}
             </div>
  
-            <form onSubmit={handleDataSubmit}> 
+            <form > 
                 <label className="label">Email</label>
                 <input onChange={handleChange('email')} className="input"
                   value={values.email} type="email" placeholder='Enter Email' />
@@ -84,7 +87,7 @@ export default function RegisterForm() {
                 <textarea onChange={handleChange('address')} className="input address"
                   value={values.address} type="text" placeholder='Enter Address' />  
         
-                <button className="button" type="submit">
+                <button className="button" type="submit" onClick={handleDataSubmit}>
                   Sign Up
                 </button>
                 <p>Already have an account? <Link to="/login">Login</Link></p>

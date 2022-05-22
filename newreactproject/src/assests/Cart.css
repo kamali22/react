@@ -1,0 +1,36 @@
+.table {
+    width: 80%;
+    font-size: 120%;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.cartbutton {
+    margin: 10px;
+    font-size: 90%;
+    background-color: #00BFFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+.remove {
+    color: white;
+    font-size: 100%;
+    background-color: rgb(247, 37, 37);
+}
+.cart-header {
+    margin-left: 210px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.footer {
+    text-align: right;
+    margin-right: 15px;
+    margin-left: 15px;
+    display: inline;
+}
+.footerdiv {
+    margin-left: 55%;
+}
+td {
+    font-size: 110%;
+}

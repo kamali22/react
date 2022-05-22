@@ -1,53 +1,34 @@
 import React, {useState} from 'react';
 import {Container ,Card, Col, Row } from 'react-bootstrap';  
 import stockData from "./foodData";
+import { useCart } from "react-use-cart";
+import ItemCard from './ItemCard';
+import DataNav from './DataNav';
 
-function FoodProduct({setCart, cart}) {
+function FoodProduct() {
     var count=0;
-    const addToCart = (product) => {
-        let newCart = [...cart];
-        newCart.push(product);
-        /*let itemInCart = newCart.find( (item) =>product.name === item.name );
-        
-        if(itemInCart) {
-            itemInCart.quantity++;
-        }
-        else {
-            itemInCart = {
-                ...product, quantity:1,
-            };
-            newCart.push(itemInCart);
-        }*/
-        setCart(newCart);
-    }
+	var value=0;
+	var lengt=0;
+    const { addItem } = useCart();
 
     return (
-        <>
-            <div className="App">  
+		
+            <div className="App"> 
+			<DataNav />
 			{stockData.map(function(data) {
+				value++;
 				count=-1;
-				return (
-					<div>
+				return ( 
+					<div key={data} className="App">
+						{console.log("Category", data.category)}
 						<div><h2>{data.category}</h2></div>
 						<div className='bootstrap-card'> 
-							{Object.keys(data.items).map((item, idx) => {
+							{Object.keys(data.items).map((item, index) => {
 								count++;
+								console.log("item", item)
 								return (
-									<Container fluid className='container'>	
-										<Col xs="4">
-											<Card className='card'>
-												<Card.Img variant='' src={data.items[count].img} />
-												<Card.Body className='card'>
-													<Card.Title>{data.items[count].itemName}</Card.Title>
-													<Card.Text>
-														Price: {data.items[count].price} <br></br>
-														Vegan: {data.items[count].vegan}
-													</Card.Text>
-													<button onClick={ () => addToCart(data.items[count])}>Add to cart</button>
-												</Card.Body>
-											</Card>
-										</Col>	
-									</Container>
+									
+									<ItemCard img={data.items[count].img} itemName={data.items[count].itemName} price={data.items[count].price} vegan={data.items[count].vegan} item={data.items[count]} key={index}/>
 								);
 									
 							})}
@@ -55,8 +36,10 @@ function FoodProduct({setCart, cart}) {
 					</div>
 				);
 			})}
+			{console.log("value is", value)}
+		{console.log("length gcgkujbkj is", lengt)}
 		</div>  
-        </>
+        
     )
 }
 

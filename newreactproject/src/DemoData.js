@@ -1,16 +1,17 @@
-import 'bootstrap/dist/css/bootstrap.min.css';  
-import {Container ,Card, Col, Row, Button} from 'react-bootstrap';  
-import food2 from './assests/food2.jpg';  
+
+import {Container ,Card, Col, Row, Button} from 'react-bootstrap';
 import stockData from "./foodData";
+import Nav from './Nav';
 import "./style.css"
 
 function DemoData() {  
-	const categories=[];
+	//const categories=[];
 	var count=0;
 	var prevCount=0;
 
   return (  
     <div className="App">  
+		<Nav />
  	   {stockData.map(function(data) {
 			prevCount = count;
 			console.log("previous count", prevCount);
@@ -18,15 +19,14 @@ function DemoData() {
 			return (
 				<div>
 					<div><h2>{data.category}</h2></div>
-					<div className='bootstrap-card'> 
+					<div> 
 						{Object.keys(data.items).map(item => {
 							count++;
-							
 							return (
-								<Container fluid className='container'>	
+								<Container fluid className='container'>
 									<Col xs="4">
 										<Card className='card'>
-											<Card.Img variant='' src={data.items[count].img} />
+											<Card.Img variant='bottom' src={data.items[count].img} />
 											<Card.Body className='card'>
 												<Card.Title>{data.items[count].itemName}</Card.Title>
 												<Card.Text>
@@ -39,7 +39,6 @@ function DemoData() {
 									</Col>	
 								</Container>
 							);
-								
 						})}
 					</div>
 				</div>
