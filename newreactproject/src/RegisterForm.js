@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Link , Navigate, useNavigate} from "react-router-dom";
-import "./style.css"
+import { Link, useNavigate} from "react-router-dom";
+import "./assests/Styles/style.css";
 import Nav from './Nav';
 import axios from 'axios';
 
@@ -13,7 +13,6 @@ export default function RegisterForm() {
     loggedIn: true,
 });
  
-  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
   const handleChange = name => e => {
@@ -33,22 +32,9 @@ export default function RegisterForm() {
     const user = { email, password, address , loggedIn};
     await axios.post('http://localhost:3010/posts', user);
     setValues({ email: '', password: '', address:'' });
-    successMessage();
     routeChange();
        
 };
- 
-  const successMessage = () => {
-    return (
-      <div
-        className="success"
-        style={{
-          display: submitted ? '' : 'none',
-        }}>
-        <h3>User {values.email} successfully registered!!</h3>
-      </div>
-    );
-  };
  
   const errorMessage = () => {
     return (
@@ -71,7 +57,6 @@ export default function RegisterForm() {
 
             <div className="messages">
               {errorMessage()}
-              {successMessage()}
             </div>
  
             <form > 

@@ -1,9 +1,6 @@
 import React from "react";
 import { NavLink , Link} from "react-router-dom";
-import "./style.css"
-import profile from "./assests/profile.png";
-import cart from "./assests/cart.png";
-import logo from "./assests/y-logo.png";
+import logo from "./assests/images/y-logo.png";
 
 class Nav extends React.Component {
     constructor() {
@@ -45,7 +42,6 @@ class Nav extends React.Component {
                     </li>
                     {this.state.isOpen && <Popup
                         content={<>
-                            <b className="popup">Design your Popup</b>
                             <p className="popup">
                                 Our technology platform connects customers,
                                 restaurant partners and delivery partners, 

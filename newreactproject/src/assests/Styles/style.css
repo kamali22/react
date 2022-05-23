@@ -1,9 +1,9 @@
 .form {
-    background-image: url("assests/food.jpeg");
+    background-image: url("/home/kamali/react/newreactproject/src/assests/images/food.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     border:1px solid black;
-    height: 92.3vh;
+    height: 100vh;
     width: 100%;
   }
 
@@ -15,7 +15,9 @@
     margin-left: 35%;
     margin-right: 35%;
     padding-left: 20px;
-    margin-top: 15%;
+    margin-top: 13%;
+    box-shadow: 2px 5px;
+    border-radius: 10px;
   }
    
   .label{

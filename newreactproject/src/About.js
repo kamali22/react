@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import DemoData from './DemoData';
-import Popup from './Popup';
+import React from 'react';
+import HomePage from './HomePage';
  
 function About() {
   return (
   <div>
-    <DemoData />
+    <HomePage /> 
   </div>
   )
 }

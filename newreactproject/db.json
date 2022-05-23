@@ -123,6 +123,13 @@
       "address": "Namakkal",
       "loggedIn": true,
       "id": 21
+    },
+    {
+      "email": "demo@gmail.com",
+      "password": "123",
+      "address": "qwe",
+      "loggedIn": true,
+      "id": 22
     }
   ]
 }

@@ -1,5 +1,4 @@
 .table {
-    width: 80%;
     font-size: 120%;
     margin-left: 200px;
     margin-right: 200px;
@@ -17,6 +16,22 @@
     font-size: 100%;
     background-color: rgb(247, 37, 37);
 }
+.place-order {
+    color: white;
+    font-size: 100%;
+    background-color: rgb(81, 185, 81);
+}
+.order {
+    text-align: left;
+    margin-top: 3%;
+    margin-right: 60%;
+}
+.place-header {
+    border: 2px solid rgb(87, 195, 228);
+    padding: 10px;
+    font-size: 100%;
+    border-radius: 10px;
+}
 .cart-header {
     margin-left: 210px;
     margin-top: 50px;
@@ -29,8 +44,11 @@
     display: inline;
 }
 .footerdiv {
-    margin-left: 55%;
+    margin-left: 25%;
 }
 td {
     font-size: 110%;
+}
+tr:hover {
+    background-color: rgb(240, 240, 240);
 }

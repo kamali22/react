@@ -1,6 +1,6 @@
 import React from 'react';
 import Routing from './routing';
-import "./style.css"
+import "./assests/Styles/style.css"
 import { CartProvider } from 'react-use-cart';
 
 class App extends React.Component {

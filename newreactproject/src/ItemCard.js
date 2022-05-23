@@ -8,7 +8,7 @@ const ItemCard = (props) => {
     return (
         <div>
             <Container fluid className="container">	
-                <Col xs="4">
+                <Col md="4">
                     <Card className="logged card">
                         <Card.Img variant='bottom' src={props.img} />
                         <Card.Body className="card">
