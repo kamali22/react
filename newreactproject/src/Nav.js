@@ -32,11 +32,11 @@ class Nav extends React.Component {
           };
 
         return (
-            <nav>
+            <nav className="navbar navbar-expand-sm bg-dark">
                 <h2 className="logo-header"><img className="logo" src={logo} alt="" />
                 Yumito</h2>
 
-                <ul className="nav-link">
+                <ul className="nav-link navbar-nav ms-auto">
                     <li>
                         <NavLink to="/about" activeClassName="active" onClick={this.togglePopup} >About</NavLink>
                     </li>

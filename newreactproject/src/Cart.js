@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useCart } from "react-use-cart";
 import "./assests/Styles/Cart.css";
 import DataNav from "./DataNav";
+import PlaceOrder from "./PlacedOrder";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { 
@@ -17,33 +19,10 @@ const Cart = () => {
 
   const [show, setShow] = useState(false);
 
-   const placeOrder = () => {
-    console.log("Your order is placed!!!");
-    return (
-      <div className="place order">
-        <h2 className="place-header">Thanks for your order!!! We will reach soon with your delicious food.</h2>
-        <div>
-          <table>
-            <tr>
-              <th>Item Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-            </tr>
-            <tr>
-            {items.map((item, index) => {
-              return (
-                <div key={index}>  
-                  <td>{item.itemName}</td>
-                  <td>{item.price}</td>
-                  <td>{item.quantity}</td>
-                </div>
-              );
-              })}
-              </tr>
-            </table>
-        </div>
-      </div>
-    );
+  let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/placeorder`; 
+      navigate(path, {state: {items: items, price: cartTotal, quantity: totalUniqueItems}});
   }
 
   if (isEmpty) return <h1><DataNav />Your cart is empty!</h1>
@@ -76,12 +55,12 @@ const Cart = () => {
         <span className="span">
           <h2 className="footer">Total Price: ${cartTotal}</h2>
           <button className="footer remove cartbutton" onClick={() => emptyCart()}>Clear Cart</button>
-          <button className="footer place-order cartbutton" onClick={() => {setShow(true)}}>Place Order</button>
-          {show ? placeOrder() : null}
+          <button className="footer place-order cartbutton" onClick={ ()=> routeChange()}>Place Order</button>
+          
         </span>
       </div>
     </div>
   );
 }
-
+/* {show ? placeOrder() : null} */
 export default Cart;

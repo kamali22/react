@@ -3,15 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import stockData from "./assests/Data/foodData";
 import ItemCard from './ItemCard';
 import DataNav from './DataNav';
+import {useLocation} from "react-router-dom";
 
 function FoodProduct() {
     var count=0;
-
     return (
-		
+
             <div className="App"> 
 			<DataNav />
 			{stockData.map(function(data) {
+				//console.log("email id is ", location.state.email)
 				count=-1;
 				return ( 
 					<div key={data} className="App">

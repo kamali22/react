@@ -7,7 +7,9 @@ function HomePage() {
 	var count=0;
 
   return (   
-    <div className="App">  
+	
+    <div className="App"> 
+	<div > 
 		<Nav />
  	   {stockData.map(function(data) {
 			count=-1;
@@ -40,6 +42,7 @@ function HomePage() {
 			);
 		})}
     </div>  
+	</div>
   );  
 }  
 

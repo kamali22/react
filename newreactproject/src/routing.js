@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import HomePage from './HomePage' 
 import Cart from './Cart'
 import FoodProduct from './FoodProduct'
+import PlaceOrder from './PlacedOrder';
 
 class Routing extends React.Component {  
   
@@ -22,6 +23,7 @@ class Routing extends React.Component {
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/placeorder" element={<PlaceOrder />} />
             <Route path="/logout" element={<LoginForm />} />
           </Routes>
         </div>  
