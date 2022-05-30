@@ -10,7 +10,7 @@ import "./assests/Styles/DataNav.css";
 class DataNav extends React.Component {
     
     render() {
-        
+        console.log("cart items", this.props.total    )
         return (
             <nav className="navbar navbar-expand-sm bg-dark">
                 <h2><img className="logo" src={logo} alt="" />
@@ -22,12 +22,9 @@ class DataNav extends React.Component {
                     <li className="nav-item"> 
                         <NavLink to="/cart"><img className='icon cart-icon' src={cart} />
                             <span class="position-absolute top-10 start-90 translate-middle badge rounded-pill bg-danger">
-                                ({(Cart.totalUniqueItems)})
+                                ({this.props.total})
                             </span>
                         </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/profile"><img className='icon profile-icon' src={profile}/></NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink to="/login">Logout</NavLink>

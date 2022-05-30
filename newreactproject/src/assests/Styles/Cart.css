@@ -1,5 +1,5 @@
 .table {
-    font-size: 120%;
+    font-size: 130%;
     margin-left: 200px;
     margin-right: 200px;
 }
@@ -22,15 +22,20 @@
     background-color: rgb(81, 185, 81);
 }
 .order {
-    text-align: left;
-    margin-top: 3%;
+    margin-top: 1%;
     margin-right: 60%;
+    margin-left: 1.5%;
 }
 .place-header {
-    border: 2px solid rgb(87, 195, 228);
+    border: 1px solid rgb(64, 66, 66);
+    color: rgb(49, 172, 209);
     padding: 10px;
-    font-size: 100%;
+    font-size: 130%;
     border-radius: 10px;
+    margin: 30px;
+    margin-top: 50px;
+    margin-right: 60%;
+    background-color: rgb(231, 253, 246);
 }
 .cart-header {
     margin-left: 210px;
@@ -51,4 +56,42 @@ td {
 }
 tr:hover {
     background-color: rgb(240, 240, 240);
+}
+.total {
+    display: inline;
+    margin-right: 43%;
+    margin-left: 4%;
+    font-size: 120%;
+}
+.delivery {
+    display: inline;
+    margin-right: 33%;
+    margin-left: 4%;
+    font-size: 120%;
+}
+hr {
+    width: 250%;
+}
+.order-detail-summary {
+    border: 2px solid black;
+    margin: 30px;
+    margin-right: 60%;
+    background-color: rgb(250, 249, 249);
+}
+.details, .summary {
+    font-size: 120%;
+    margin-left: 30px;
+    width: 230%;
+}
+.delivery-image {
+    background-image: url("/home/kamali/react/newreactproject/src/assests/images/delivery1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 75vh;
+    width: 50%;
+}
+.delivery-data {
+    display: inline;
+    margin-left: 50%;
+    width: 40%;
 }

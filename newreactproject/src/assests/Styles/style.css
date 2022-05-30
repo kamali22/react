@@ -118,7 +118,6 @@ li {
   color: white;
 }
 
-
 .active {
   color:rgb(15, 14, 14);
   background-color: rgb(248, 252, 248);
@@ -192,23 +191,12 @@ li {
   padding-left: 0px;
   text-align: left;
 }
-.container {
-  display: flex;
-  margin-bottom: 30px;
-}
+
 .logged:hover {
   box-shadow: 2px 5px;
   transform: scale(1.1);
 }
 
-.container {
-  display: flex;
-  margin-bottom: 30px;
-}
 .bootstrap-card {
   display: grid;
-}
-.logged:hover {
-  box-shadow: 2px 5px;
-  transform: scale(1.1);
 }

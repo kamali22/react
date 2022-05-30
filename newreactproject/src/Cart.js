@@ -28,7 +28,7 @@ const Cart = () => {
   if (isEmpty) return <h1><DataNav />Your cart is empty!</h1>
 
   return (
-    <div> <DataNav />
+    <div> <DataNav total={totalUniqueItems}/>
       <h2 className="cart-header">In Your Cart ({totalUniqueItems})</h2>
       <table className="table" style={{width: '1500px'}}>
         <tbody>
@@ -62,5 +62,5 @@ const Cart = () => {
     </div>
   );
 }
-/* {show ? placeOrder() : null} */
+
 export default Cart;
