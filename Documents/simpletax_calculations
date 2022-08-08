@@ -1,0 +1,44 @@
+lambda
+	A lambda function is a small anonymous function. A lambda function can take any number of arguments, but can only have one expression.
+map
+	The map() function executes a specified function for each item in an iterable(list, tuples).
+	It is used when we want perform same operation over all the items in list, tuples
+	map(function, iterables)
+filter
+	The filter() function returns an iterator were the items are filtered through a function to test if the item is accepted or not.
+	filter(function, iterables)
+reduce
+	reduce() is useful when you need to apply a function to an iterable and reduce it to a single cumulative value.
+	reduce(function, iterables)
+floor
+	Returns the lower values... eg. 13.2 as 13 and 13.7 as 13
+ceil
+	Returns the high values... eg. 13.2 as 14 and 13.7 as 14
+round
+	Returns the neasrest values... eg. 13.2 as 13 and 13.7 as 14
+list comprehension
+	List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.
+	eg.. fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+	newlist = [x for x in fruits if "a" in x]
+	print(newlist)
+.join
+	The join() method takes all items in an iterable and joins them into one string. A string must be specified as the separator.
+.replace
+	txt = "I like bananas"
+	x = txt.replace("bananas", "apples")
+	print(x) --> I like apples
+strptime
+	Returns string as datetime object
+strftime
+	Returns datetime object as string
+pprint
+	Formatting the output that we need to print
+import datetime
+	Used to work with date and times
+float_or_empty()
+any()
+	The any() function returns True if any item in an iterable are true, otherwise it returns False. If the iterable object is empty, the any() function will return False.
+strip()
+	Removes the leading and trailing white spaces
+json load vs dumps
+	loads() takes in a string and returns a json object. json. dumps() takes in a json object and returns a string.
